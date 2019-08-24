@@ -2,4 +2,6 @@
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="SMile\Contact\Api\Data\ContactInterface" type="SMile\Contact\Model\Contact" />
+    <preference for="SMile\Contact\Api\Data\ContactSearchResultsInterface" type="Magento\Framework\Api\SearcgResults"/>
+    <preference for="SMile\Contact\Api\ContactRepositoryInterface" type="SMile\Contact\Model\ContactRepository"/>
 </config>
