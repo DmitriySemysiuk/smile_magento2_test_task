@@ -4,4 +4,27 @@
     <preference for="SMile\Contact\Api\Data\ContactInterface" type="SMile\Contact\Model\Contact" />
     <preference for="SMile\Contact\Api\Data\ContactSearchResultsInterface" type="Magento\Framework\Api\SearcgResults"/>
     <preference for="SMile\Contact\Api\ContactRepositoryInterface" type="SMile\Contact\Model\ContactRepository"/>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="smile_contact_contact_listing_data_source" xsi:type="string">SMile\Contact\Model\ResourceModel\Contact\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="SMile\Contact\Model\ResourceModel\Contact\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">contact_us_request</argument>
+            <argument name="eventPrefix" xsi:type="string">smile_contact_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">contact_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">SMile\Contact\Model\ResourceModel\Contact</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Model\Entity\RepositoryFactory">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="SMile\Contact\Api\Data\ContactInterface" xsi:type="string">SMile\Contact\Api\ContactInterface</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

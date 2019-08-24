@@ -6,7 +6,7 @@
              title="Contact requests"
              module="SMile_Contact"
              sortOrder="70"
-             action="smile_contact/contactRequests"
+             action="smile_contact/contactRequest"
              resource="SMile_Contact::contactRequests"/>
     </menu>
 </config>
