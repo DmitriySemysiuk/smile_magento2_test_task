@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="SMile_Contact::ContactRequests"
+             title="Contact requests"
+             module="SMile_Contact"
+             sortOrder="70"
+             action="smile_contact/contactRequests"
+             resource="SMile_Contact::contactRequests"/>
+    </menu>
+</config>

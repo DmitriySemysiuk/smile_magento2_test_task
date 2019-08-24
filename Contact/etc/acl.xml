@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="SMile_Contact::contacts" title="Contact requests">
+                    <resource id="SMile_Contact::contact_save" title="Save" translate="title" sortOrder="10"/>
+                    <resource id="SMile_Contact::contact_delete" title="Delete" translate="title" sortOrder="20"/>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
