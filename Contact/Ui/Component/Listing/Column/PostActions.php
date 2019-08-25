@@ -17,8 +17,7 @@ class PostActions extends Column
     /**
      * Url path
      */
-    const URL_PATH_EDIT = 'smile_contact/contact/edit';
-    const URL_PATH_DELETE = 'smile_contact/contact/delete';
+    const URL_PATH_EDIT = 'smile_contact/contactrequest/edit';
 
     /**
      * Url builder

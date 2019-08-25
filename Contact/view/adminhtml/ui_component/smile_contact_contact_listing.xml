@@ -99,7 +99,7 @@
         </column>
         <column name="status" component="Magento_Ui/js/grid/columns/select">
             <argument name="data" xsi:type="array">
-                <item name="options" xsi:type="object">Smile\Customer\Model\PriceRequest\Source\Status</item>
+                <item name="options" xsi:type="object">SMile\Contact\Model\Contact\Source\Status</item>
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">select</item>
                     <item name="label" xsi:type="string" translate="true">Is active</item>

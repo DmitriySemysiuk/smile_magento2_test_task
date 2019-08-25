@@ -18,6 +18,6 @@ class Collection extends AbstractCollection
      */
     public function _construct()
     {
-        $this->_init('SMile\Contact\Model\Contact', 'SMile\Catalog\Model\ResourceModel\Contact');
+        $this->_init('SMile\Contact\Model\Contact', 'SMile\Contact\Model\ResourceModel\Contact');
     }
 }

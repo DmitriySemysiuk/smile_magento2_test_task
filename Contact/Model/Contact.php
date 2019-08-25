@@ -49,7 +49,7 @@ class Contact extends AbstractModel implements IdentityInterface, ContactInterfa
     }
 
     /**
-     * Retrieve price request id
+     * Retrieve contact request id
      *
      * @return int
      */

@@ -93,7 +93,7 @@ class ContactRepository implements ContactRepositoryInterface
      */
     public function getById($contactId)
     {
-        $contact = $this->priceRequestFactory->create();
+        $contact = $this->contactFactory->create();
         $this->resource->load($contact, $contactId);
         if (!$contact->getId()) {
             throw new NoSuchEntityException(__('Post with id "%1" does not exist.', $contactId));
@@ -125,7 +125,7 @@ class ContactRepository implements ContactRepositoryInterface
         $collection->setCurPage($criteria->getCurrentPage());
         $collection->setPageSize($criteria->getPageSize());
         $contact = [];
-        /** @var Data\PriceRequestInterface $priceRequestModel */
+        /** @var Data\ContactInterface $contactModel */
         foreach ($collection as $contactModel) {
             $contact[] = $contactModel;
         }
