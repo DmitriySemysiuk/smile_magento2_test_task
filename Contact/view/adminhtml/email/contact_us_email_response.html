@@ -1,0 +1,8 @@
+{{template config_path="design/email/header_template"}}
+<div>
+    <h1>{{trans "Hello"}}, {{trans "%name." name=$data.name}}</h1>
+    <h2>{{trans "You asked about the latest prices: %comment." comment=$data.comment}}</h2>
+    <h2>{{trans "We respond: %answer." answer=$data.answer}}</h2>
+    <h3>Best Regards</h3>
+</div>
+{{template config_path="design/email/footer_template"}}

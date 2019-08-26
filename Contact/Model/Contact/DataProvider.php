@@ -91,12 +91,12 @@ class DataProvider extends AbstractDataProvider
             $this->loadedData[$contactRequest->getId()] = $contactRequest->getData();
         }
 
-        $data = $this->dataPersistor->get('smile_contact_contactrequest');
+        $data = $this->dataPersistor->get('contact_us_request');
         if (!empty($data)) {
             $contactRequest = $this->collection->getNewEmptyItem();
             $contactRequest->setData($data);
             $this->loadedData[$contactRequest->getId()] = $contactRequest->getData();
-            $this->dataPersistor->clear('smile_contact_contactrequest');
+            $this->dataPersistor->clear('contact_us_request');
         }
 
         return $this->loadedData;
