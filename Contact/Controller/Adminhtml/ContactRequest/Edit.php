@@ -95,13 +95,13 @@ class Edit extends Action
             try {
                 $model = $this->contactRepository->getById($id);
             } catch (NoSuchEntityException $e) {
-                $this->messageManager->addExceptionMessage($e, __('Something went wrong while editing the contact.'));
+                $this->messageManager->addExceptionMessage($e, __('Something went wrong while editing the contact response.'));
                 /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
                 $resultRedirect = $this->resultRedirectFactory->create();
 
                 return $resultRedirect->setPath('*/*/');
             }
-//            $this->coreRegistry->register('customer_request', $model);
+            $this->coreRegistry->register('contact_response', $model);
         }
 
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */

@@ -55,9 +55,11 @@ class Delete extends Action
                 $contactRepository = $this->contactRepository;
                 $contactRepository->deleteById($id);
                 $this->messageManager->addSuccessMessage(__('The contact request has been deleted.'));
+
                 return $resultRedirect->setPath('*/*/');
             } catch (\Exception $e) {
                 $this->messageManager->addErrorMessage($e->getMessage());
+
                 return $resultRedirect->setPath('*/*/delete', ['id' => $id]);
             }
         }

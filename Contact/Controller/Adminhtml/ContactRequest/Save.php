@@ -78,26 +78,40 @@ class Save extends Action
         $data = $this->getRequest()->getPostValue();
 
         if ($data) {
+            $answer = "";
             try {
-                $answer = "The price request has been saved.";
 
                 if (!empty($data['answer'])) {
                     $emailObject = new DataObject();
                     $emailObject->setData($data);
 
-                    $this->email->notify($emailObject);
+                    try {
+                        $this->email->notify($emailObject);
 
-                    $answer = $answer . " The letter has been send.";
-                    $data['status'] = Contact::STATUS_CLOSED;
+                        $answer = "The letter has been send.";
+                        $data['status'] = Contact::STATUS_CLOSED;
+                    } catch(\Exception $e) {
+                        $answer = "Something went wrong, the letter WAS NOT sent.";
+                        $data['status'] = Contact::STATUS_IN_PROGRESS;
+                    }
                 }
-
                 $model = $this->contactRepository->getById($data['id']);
                 $model->setData($data);
                 $this->contactRepository->save($model);
 
+                $answer = $answer . "   The contact us request has been saved.";
                 $this->messageManager->addSuccessMessage(__($answer));
+
+                $this->dataPersistor->clear('contact_us_request');
             } catch (\Exception $e) {
-                $this->messageManager->addErrorMessage("Contact us response fall: %1.", $e->getMessage());
+                $this->messageManager->addErrorMessage($answer . "Contact us save fall!!!   %1", $e->getMessage());
+
+                $this->dataPersistor->set('contact_us_request', $data);
+
+                return $resultRedirect->setPath(
+                    '*/*/edit',
+                    ['id' => $this->getRequest()->getParam('id')]
+                );
             }
         }
 

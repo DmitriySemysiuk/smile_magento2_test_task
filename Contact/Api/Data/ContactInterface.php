@@ -1,6 +1,5 @@
 <?php
 
-
 namespace SMile\Contact\Api\Data;
 
 /**
